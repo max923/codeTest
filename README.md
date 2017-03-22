@@ -23,7 +23,7 @@
   console.log(ans02);
 </code></pre>
 <br>
-<p>Q3.Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).</p>
+<p>Q3. Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).</p>
 <p>You may assume that the intervals were initially sorted according to their start times. </p>
 <br>
 <p>Q4. Given a 2D board and a word, find if the word exists in the grid.</p>
