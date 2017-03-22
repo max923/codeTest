@@ -17,9 +17,17 @@
 <p> Q2. Given a positive integer num, write a function which returns True if num is a perfect square else False. </p>
 <pre><code>
   function perfectSquare(num){
-    return num > 0 && Math.sqrt(num) % 1 === 0
+    var i = 1;
+    while (i*i < num) {
+      i++
+    }
+    if(i*i === num){
+      return true
+    } else {
+      return false
+    }
   }
-  var ans02 = perfectSquare(9);
+  var ans02 = perfectSquare(25);
   console.log(ans02);
 </code></pre>
 <br>
@@ -58,3 +66,9 @@
 </code></pre>
 <br>
 <p>Q5. Calculate the sum of two integers a and b, but you are not allowed to use the operator + and </p>
+<pre><code>
+  function sum(a,b){
+    return a^b
+  }
+  console.log(sum(1,2));
+</code></pre>
