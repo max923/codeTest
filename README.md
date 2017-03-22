@@ -17,6 +17,7 @@
 <p> Q2. Given a positive integer num, write a function which returns True if num is a perfect square else False. </p>
 <pre><code>
   function perfectSquare(num){
+    if(num < 0) return false;
     var i = 1;
     while (i*i < num) {
       i++
