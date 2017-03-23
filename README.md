@@ -34,6 +34,41 @@
 <br>
 <p>Q3. Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).</p>
 <p>You may assume that the intervals were initially sorted according to their start times. </p>
+<pre><code>
+  function intervals(intervalsArr,insertArr){
+    Array.prototype.concatAll = function() {
+        var results = [];
+        this.forEach(function(subArray) {
+          results.push.apply(results, subArray);
+        });
+        return results;
+    };
+    // concatAll prototype
+    var orgArr = [];
+    var filtetArr = intervalsArr.filter(function(element){
+      if(element[1] - insertArr[0] > 0 && insertArr[1] - element[0] > 0){
+        return element;
+      } else {
+        orgArr.push(element);
+      }
+    })
+    filtetArr.push(insertArr);
+    filtetArr = filtetArr.concatAll();
+    var newArr= []
+    var maxNum = Math.max(...filtetArr);
+    var minNum = Math.min(...filtetArr);
+    newArr.push(minNum,maxNum);
+    orgArr.push(newArr);
+    orgArr.sort(function(a,b) {
+        return a[0]-b[0]
+    });
+    return orgArr;
+  }
+  var intervalsArr = [[1,2],[3,5],[6,7],[8,10],[12,16]];
+  var insertArr = [4,9];
+  var ans03 = intervals(intervalsArr,insertArr);
+  console.log(ans03);
+</code></pre>
 <br>
 <p>Q4. Given a 2D board and a word, find if the word exists in the grid.</p>
 <pre><code>
