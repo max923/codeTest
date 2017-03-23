@@ -59,9 +59,7 @@
     var minNum = Math.min(...filtetArr);
     newArr.push(minNum,maxNum);
     orgArr.push(newArr);
-    orgArr.sort(function(a,b) {
-        return a[0]-b[0]
-    });
+    orgArr.sort((a,b)=> a[0]-b[0]);
     return orgArr;
   }
   var intervalsArr = [[1,2],[3,5],[6,7],[8,10],[12,16]];
