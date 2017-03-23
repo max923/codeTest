@@ -45,7 +45,7 @@
     };
     // concatAll prototype
     var orgArr = [];
-    var filtetArr = intervalsArr.filter(function(element){
+    var filtetArr = intervalsArr.map(function(element){
       if(element[1] - insertArr[0] > 0 && insertArr[1] - element[0] > 0){
         return element;
       } else {
