@@ -55,9 +55,7 @@
     filtetArr.push(insertArr);
     filtetArr = filtetArr.concatAll();
     var newArr= []
-    var maxNum = Math.max(...filtetArr);
-    var minNum = Math.min(...filtetArr);
-    newArr.push(minNum,maxNum);
+    newArr.push( Math.min(...filtetArr) , Math.max(...filtetArr) );
     orgArr.push(newArr);
     orgArr.sort((a,b)=> a[0]-b[0]);
     return orgArr;
