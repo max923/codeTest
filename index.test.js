@@ -2,8 +2,8 @@
 const getOpeningSum = require('./questions/1.getOpeningSum')
 const perfectSquare = require('./questions/2.perfectSquare')
 const reversed = require('./questions/3.reversed')
-const findIndex = require('./questions/5.findIndex')
-const compose = require('./questions/6.compose')
+const unique = require('./questions/5.unique')
+const findIndex = require('./questions/6.findIndex')
 const Data = [
     {
         name: '草山金工',
@@ -71,9 +71,6 @@ describe('GetOpeningSum', () => {
     it('should return opening items sum', () => {
         expect(getOpeningSum(Data)).toEqual(4300)
     })
-    it('should return false while is not perfectSquare', () => {
-        expect(perfectSquare(26)).toBe(false)
-    })
 })
 
 describe('PerfectSquare', () => {
@@ -91,14 +88,15 @@ describe('Reversed', () => {
     })
 })
 
+describe('Unique', () => {
+    it('should return the unique value in array ', () => {
+        expect(unique[1,1,2,2,3]).toEqual([1,2,3])
+    })
+})
+
 describe('FindIndex', () => {
     it('should return the index of the first element in an array ', () => {
         expect([1,2,3,4,5].findIndex((element) => element === 3)).toEqual(2)
     })
 })
 
-describe('Compose', () => {
-    it('should be compose with function', () => {
-        expect(compose(x=>x*2,x=>x*2)(2)).toEqual(8)
-    })
-})
